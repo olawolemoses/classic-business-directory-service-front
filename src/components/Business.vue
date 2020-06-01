@@ -64,7 +64,6 @@
 
 
 <script>
-import config from '@/config';
 import { EyeIcon , StarIcon } from 'vue-feather-icons';
 
 export default {
@@ -78,7 +77,7 @@ export default {
     
     computed: {
         imageUrl(){
-            return `${config.siteUrl}/storage/${this.business.default_image}`;
+            return `${this.business.default_image}`;
         }
     },
     data(){

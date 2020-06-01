@@ -134,12 +134,12 @@ export default {
             let images = [];
             if (this.business && this.business.images){
                images = JSON.parse(this.business.images)
-                                 .map( image => `${config.siteUrl}/storage/` + image);
+                                 .map( image => image);
             }
             return images;
         },
         imageUrl(){
-            return `${config.siteUrl}/storage/${this.business.default_image}`;
+            return `${this.business.default_image}`;
         }
     },
     props: {

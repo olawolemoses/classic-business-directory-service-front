@@ -1,4 +1,4 @@
 export default {
-    "apiUrl": "http://127.0.0.1:8000/api",
-    "siteUrl": "http://127.0.0.1:8000",
+    "apiUrl": "http://blooming-bastion-89244.herokuapp.com/api",
+    "siteUrl": "http://blooming-bastion-89244.herokuapp.com/",
 }
