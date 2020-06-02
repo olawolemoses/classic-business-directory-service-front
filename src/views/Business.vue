@@ -1,5 +1,5 @@
 <template>
-   <div class="row">
+   <div class="row" v-if="business">
       <div class="col-12 col-xl-8">
          <!-- Card -->
          <div class="card">
@@ -151,7 +151,7 @@ export default {
     components: {EyeIcon, StarIcon, Rating},
     data(){
         return {
-            business: {},
+            business: null,
             businessCategories: []            
         }
     },
@@ -161,8 +161,12 @@ export default {
             console.log("config", config), this.id;
             Axios.get(`${config.apiUrl}/business/${this.id}`).then((response) => {
                 console.log(response);
-                this.business = response.data.business;
-                this.businessCategories = response.data.businessCategories;
+                if(response.data.success){
+                   this.business = response.data.business;
+                   this.businessCategories = response.data.businessCategories;
+                } else {
+                   window.alert("Business does not exist");
+                }
             });            
         },
         sendRating($event){
