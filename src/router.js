@@ -14,10 +14,10 @@ const router = new Router({
     routes: [
     { 
       path: '/', 
-      redirect: "/search"   
+      redirect: "/home"   
     },
     { 
-      path: '/search', 
+      path: '/home', 
       component: Home,
       name: "home",
       props: true      
@@ -25,7 +25,7 @@ const router = new Router({
     {
       path: "/search/:searchString",
       component: Home,
-      name: "home",
+      name: "search",
       props: true
     },
 

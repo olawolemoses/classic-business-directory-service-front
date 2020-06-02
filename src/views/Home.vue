@@ -36,12 +36,17 @@ export default {
 
         }     
     },    
-    props: ["searchString"],
+    props: {
+        searchString: {
+            type: String,
+            default: ""
+        }
+    },
     methods: {
         getBusinessList() {
             this.loading = true;
             console.log("config", config);
-            if(this.searchString){
+            if(this.searchString != ""){
                 Axios.post(`${config.apiUrl}/search`, {q: this.searchString}).then((response) => {
                     console.log("searching", response);
                     this.businesses = response.data.businesses;
